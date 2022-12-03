@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="utf-8">
+<title>DataCoreReports</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/dcr.css}" />
+</head>
+
+<body>
+
+	<h2>DataWeekly Metrics</h2>
+
+	<form th:action="@{/getReport}" method="post"
+		th:object="${reportInput}">
+		<table id="inputT">
+			<tr>
+				<td><label>Select Report Name:</label></td>
+				<td><select th:field="*{name}">
+						<option th:value="'MetricsReport'" th:text="MetricsReport"></option>
+						<option th:value="'ClinicalChartReport'" th:text="ClinicalChartReport"></option>
+				</select></td>
+
+			</tr>
+			<tr>
+				<td><label>Start Date:</label></td>
+				<td><input type="date" th:field="*{startDate}" /></td>
+			</tr>
+			<tr>
+				<td><label>End Date:</label></td>
+				<td><input type="date" th:field="*{endDate}" /></td>
+
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<button type="submit" class="button">Submit</button>
+
+				</td>
+			</tr>
+		</table>
+	</form>
+	<div th:if="${error != null}" class="error">
+		<span th:text="${error}"></span><br />
+	</div>
+	<div th:if="${message != null}" class="message">
+		<span th:text="${message}"></span><br />
+	</div>
+</body>
+</html>

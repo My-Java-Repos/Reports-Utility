@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="utf-8">
+<title>DataCoreReports</title>
+</head>
+
+<body>
+
+	<form th:action="@{/getMetricsReport}" method="post"
+		th:object="${reportInput}">
+		<div>
+			
+			<input type="text" th:field=*{name} />
+		</div>
+		<div>
+			<label>Start Date:</label> <input type="date" th:field="*{startDate}" />
+		</div>
+		<div>
+			<label>end Date:</label> <input type="date" th:field="*{endDate}" />
+		</div>
+		<div>
+			<button type="submit" class="button">Submit</button>
+		</div>
+	</form>
+
+</body>
+</html>

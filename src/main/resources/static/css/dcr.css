@@ -1,0 +1,17 @@
+.error, .message {
+	color: #ff0000;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+#inputT {
+	border-collapse: collapse;
+	border: 1px solid black;
+	width: 400px;
+	margin-right: 10px;
+	margin-bottom: 12px;
+}
+
+th, td {
+	padding: 8px;
+}
